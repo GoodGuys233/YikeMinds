@@ -4,7 +4,9 @@ if (!isset($_SESSION['flag']))
   echo "请先登录";
   header('Location: ../login.html');
 }
+
 ?>
+<!-- 1234 -->
     <head>
     <title>查看数据</title>
     <link rel="shortcut icon" href="../img/yike.jpg">
