@@ -238,6 +238,48 @@ function change1_item()
         }
     });
 }
+function tobedo()
+{
+    var head = $("#head").val();
+    var id = $("#id").val();
+    var complete=3;
+    console.log(id);
+    console.log(head);
+    console.log(complete);
+    //console.log(preserve);
+
+    $.ajax({
+        type: "post",
+        url: "./change.php",
+        data: {"head":head,"id":id,"complete":complete},
+        dataType: "json",//后端返回json数据
+
+        success: function(msg){
+            console.log(msg);
+            var json_errcode = msg['err_code'];
+            var json_msg = msg['text'];
+            // console.log(msg['msg']);
+            if(json_errcode==0)
+            {
+                swal({
+                icon: "success",
+                text: json_msg,
+                }).then(function () {
+                    window.location.href = "./admin.php";
+                    
+                })
+            }
+            else
+            {
+                swal({
+                    icon: "error",
+                    text: json_msg,
+                })
+            }
+
+        }
+    });
+}
 function change_item1()
 {
     var head = $("#head1").val();

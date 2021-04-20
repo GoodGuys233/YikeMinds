@@ -34,8 +34,6 @@ $all_count = $row['COUNT(*)'];
         <script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
         <script language=javascript src='https://cdn.bootcdn.net/ajax/libs/sweetalert/2.1.2/sweetalert.min.js'></script>
         <script src="./jsapi1.js"></script>
-        
-
     </head>
     <body>
         <div class="container">
@@ -142,13 +140,26 @@ $all_count = $row['COUNT(*)'];
               </div>
             </form>
           </div>
-          
+
+          <div class="navbar navbar-expand-sm bg-dark navbar-dark fixed-bottom">
+          <a class="navbar-brand" href="#">登记</a>
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="">BBS</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="login.html">个人</a>
+            </li>
+          </ul>
+</div>
+
+
+          <div class="container">
+          <div class="jumbotron text-center" style="margin-bottom:16px;margin-top:10px;padding-bottom:18px;padding-top: 2px;">
           <div id="copyright" style="float:margin-bottom;text-align:center;padding-top:40px;font-size:12px">
           <span>
           ©2016-2021<br>山东科技大学益科服务团队<br>
-
-          </span>
-          
+          </span>         
           </div>
           <div id="author" style="float:margin-bottom;text-align:center;padding-top:10px;font-size:10px;color:grey;">
         团结/高效/务实/创新<br>
@@ -170,7 +181,8 @@ $all_count = $row['COUNT(*)'];
           
           ?>
           </div>
-          
+          </div>
+          </div>
           <script type="text/javascript">
               check_num();
           </script>

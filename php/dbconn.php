@@ -3,8 +3,8 @@
 $dbms='mysql';             //数据库类型
 $host='localhost';         //数据库主机名
 $dbName='yike';            //数据库名
-$user='yike';              //数据库连接用户名
-$pass='kRfFmTcPJP4w8DYM';                  //密码
+$user='root';              //数据库连接用户名
+$pass='root@lotke';                  //密码
 $dsn="$dbms:host=$host;dbname=$dbName";   //pdo数据源
 
 

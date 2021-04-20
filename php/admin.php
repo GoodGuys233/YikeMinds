@@ -27,6 +27,9 @@ if (!isset($_SESSION['flag']))
       <a class="nav-link active" data-toggle="tab" href="#home">未完成</a>
     </li>
     <li class="nav-item">
+      <a class="nav-link" data-toggle="tab" href="#menu0">未完成待交接</a>
+    </li>
+    <li class="nav-item">
       <a class="nav-link" data-toggle="tab" href="#menu1">预约</a>
     </li>
     <li class="nav-item">
@@ -83,6 +86,57 @@ if (!isset($_SESSION['flag']))
       </div>
       <input onclick="change1_item();" type="button" class="btn btn-primary" value="已完成未取走";/> <!-- complete=2 -->
       <input onclick="change_item();" type="button" class="btn btn-primary" value="已完成已取走";/> <!-- complete=1 -->
+      <input onclick="tobedo();" type="button" class="btn btn-primary" value="未完成待交接";/>
+    </form>
+    <?php
+    error_reporting(E_ALL ^ E_DEPRECATED);
+    $con = mysqli_connect("localhost:3306","yike","kRfFmTcPJP4w8DYM");
+    if(!$con)
+{
+    die('Could not connect to mysql');
+}
+mysqli_select_db($con,"yike");
+$sql="SELECT * FROM submited WHERE resevation = '0' and complete = 0 and deleted=0 ORDER BY id DESC";
+$res=mysqli_query($con,$sql);
+echo "<table border='0' class='table table-striped table-responsive' style='font-size:80%;width:280%;word-break:break-all; word-wrap:break-all;'>
+<tr>
+<th>id</th>
+<th>name</th>
+<th>phone</th>
+<th>QQ</th>
+<th>送修物品</th> <th>问题描述</th>
+<th>附加物品</th>
+<th>填写时间</th>
+</tr>";
+while($row=mysqli_fetch_array($res))
+{
+
+    echo "<tr>";
+    echo "<td style='word-break:keep-all'>" . $row['id'] ."</td>";
+    echo "<td style='word-break:keep-all'>" . $row['yname'] ."</td>";
+    echo "<td style='word-break:keep-all'><a href='tel:" . $row['phone'] ."'>".$row['phone']."</a></td>";
+    echo "<td>" . $row['QQ'] ."</td>";
+    echo "<td>" . $row['yobject'] ."</td>";
+    echo "<td>" . $row['des'] ."</td>";
+    echo "<td>" . $row['extra'] ."</td>";
+    echo "<td>" . $row['ydate'] ."</td>";
+    echo "</tr>";
+}
+echo "</table>";
+?>
+    </div>
+    <div id="menu0" class="container tab-pane fade"><br>
+    <form method="POST" action="change.php">
+    <div class="form-group">
+      <label for="email">id:</label>
+      <input type="text" class="form-control" id="id" name="id" placeholder="id号">
+      </div>
+      <div class="form-group">
+      <label for="pwd">负责人:</label>
+      <input type="text" class="form-control" id="head" name="head" placeholder="负责人">
+      </div>
+      <input onclick="change1_item();" type="button" class="btn btn-primary" value="已完成未取走";/> <!-- complete=2 -->
+      <input onclick="change_item();" type="button" class="btn btn-primary" value="已完成已取走";/><!-- complete=1 -->
     </form>
     <?php
 error_reporting(E_ALL ^ E_DEPRECATED);
@@ -92,7 +146,7 @@ if(!$con)
     die('Could not connect to mysql');
 }
 mysqli_select_db($con,"yike");
-$sql="SELECT * FROM submited WHERE resevation = '0' and complete = 0 and deleted=0 ORDER BY id DESC";
+$sql="SELECT * FROM submited WHERE resevation = '0' and complete = 3 and deleted=0 ORDER BY id DESC";
 $res=mysqli_query($con,$sql);
 echo "<table border='0' class='table table-striped table-responsive' style='font-size:80%;width:280%;word-break:break-all; word-wrap:break-all;'>
 <tr>
@@ -129,7 +183,6 @@ echo "</table>";
       <input onclick="change_item2();" type="button" class="btn btn-primary" value="确认预约人已经到场";/>
       </div>
     </form>
-
 <?php
 error_reporting(E_ALL ^ E_DEPRECATED);
 $con = mysqli_connect("localhost:3306","yike","kRfFmTcPJP4w8DYM");
