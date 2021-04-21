@@ -20,7 +20,6 @@ $all_count = $row['COUNT(*)'];
 
 ?>
 
-
 <!DOCTYPE html>
 <html>
     <head>
@@ -34,6 +33,11 @@ $all_count = $row['COUNT(*)'];
         <script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
         <script language=javascript src='https://cdn.bootcdn.net/ajax/libs/sweetalert/2.1.2/sweetalert.min.js'></script>
         <script src="./jsapi1.js"></script>
+        <!-- <link rel="stylesheet" type="text/css" href="https://www.apple.com/ac/globalnav/6/en_US/styles/ac-globalnav.built.css">
+        <link rel="stylesheet" type="text/css" href="https://www.apple.com/ac/localnav/5/styles/ac-localnav.built.css">
+        <link rel="stylesheet" type="text/css" href="https://www.apple.com/ac/globalfooter/6/en_US/styles/ac-globalfooter.built.css">
+        <link rel="stylesheet" type="text/css" href="https://www.apple.com/ac/localeswitcher/3/zh_CN/styles/localeswitcher.built.css">
+        <link rel="stylesheet" href="https://www.apple.com/v/home/hb/built/styles/main.built.css" type="text/css"> -->
     </head>
     <body>
         <div class="container">
@@ -141,21 +145,8 @@ $all_count = $row['COUNT(*)'];
             </form>
           </div>
 
-          <div class="navbar navbar-expand-sm bg-dark navbar-dark fixed-bottom">
-          <a class="navbar-brand" href="#">登记</a>
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link" href="">BBS</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="login.html">个人</a>
-            </li>
-          </ul>
-</div>
-
-
           <div class="container">
-          <div class="jumbotron text-center" style="margin-bottom:16px;margin-top:10px;padding-bottom:18px;padding-top: 2px;">
+          <div class="jumbotron text-center" style="margin-bottom:16px;margin-top:10px;padding-bottom:55px;padding-top: 2px;">
           <div id="copyright" style="float:margin-bottom;text-align:center;padding-top:40px;font-size:12px">
           <span>
           ©2016-2021<br>山东科技大学益科服务团队<br>
@@ -183,8 +174,54 @@ $all_count = $row['COUNT(*)'];
           </div>
           </div>
           </div>
+          <!-- 底栏开始 -->
+<!-- <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-bottom">
+  <a class="navbar-brand" href="#">YIKE</a>
+  <ul class="navbar-nav">
+    <li class="nav-item">
+      <a class="nav-link" href="javascript:void(0)"style="background-color: rgb(150, 185, 125); font-weight: bold; color: rgb(255, 255, 255);
+border-radius:6px;" >送修</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="javascript:void(0)">BBS</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="javascript:void(0)">个人</a>
+    </li>
+  </ul>
+</nav> -->
+
+<div class="navbar-nav-scroll">
+<nav class="navbar navbar-expand navbar-light bg-light bd-navbar-nav flex-row fixed-bottom">
+  <a class="navbar-brand" href="#">
+  <img src="/img/yike.png" width="30" height="30" alt="">
+  Yike
+  </a>
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="#" style="font-size:10px">
+        <img src="/img/note.png" width="30" height="30" alt="">
+        登记
+        <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#" style="font-size:10px">
+        <img src="/img/speak.png" width="30" height="30" alt="">
+        BBS
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#" style="font-size:10px">
+        <img src="/img/user.png" width="30" height="30" alt="">
+        个人
+        </a>
+      </li>
+    </ul>
+</nav>
+</div>
+  
           <script type="text/javascript">
-              check_num();
+          check_num();
           </script>
         
     </body>
