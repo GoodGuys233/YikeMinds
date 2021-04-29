@@ -102,7 +102,7 @@ catch(PDOException $pdoerr)
     //回滚事务
     $db->rollBack();
     $ret_msg['err_code'] = '1';
-    $ret_msg['text'] = '数据库出错，请联系工作人员';
+    $ret_msg['text'] = '数据库错误';
 }
 
 

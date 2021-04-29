@@ -5,10 +5,6 @@ if (!isset($_SESSION['flag']))
   echo "请先登录";
   header('Location: ../login.html');
 }
-if($_SERVER['HTTP_REFERER']!='https://yike.catop.top/php/door.php')
-{
-    die("危险操作已被阻止！");
-}
  
   $data['xAction']=$_GET['xAction'];
   $data['xParam']=$_GET['xParam'];

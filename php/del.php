@@ -4,10 +4,6 @@ if (!isset($_SESSION['flag']))
   echo "请先登录";
   header('Location: ../login.html');
 }
-if($_SERVER['HTTP_REFERER']!='https://yike.catop.top/php/admin.php')
-{
-    die("危险操作已被阻止！");
-}
 header('Content-Type:application/json; charset=utf-8');
 include "dbconn.php";
 

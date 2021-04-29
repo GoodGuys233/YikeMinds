@@ -1,12 +1,3 @@
-<?php session_start() ;
-if (!isset($_SESSION['flag']))
-{
-  echo "请先登录";
-  header('Location: ../login.html');
-}
-
-?>
-<!-- 1234 -->
 <head>
     <title>查看数据</title>
     <link rel="shortcut icon" href="../img/yike.jpg">
@@ -19,7 +10,7 @@ if (!isset($_SESSION['flag']))
     <script src="https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js"></script>
     <script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <script language=javascript src='https://cdn.bootcdn.net/ajax/libs/sweetalert/2.1.2/sweetalert.min.js'></script>
-    <script src="../jsapi.js"></script>
+    <script src="../jsapi1.js"></script>
     <div class="container">
   <br>
 

@@ -32,7 +32,7 @@ $all_count = $row['COUNT(*)'];
         <script src="https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js"></script>
         <script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
         <script language=javascript src='https://cdn.bootcdn.net/ajax/libs/sweetalert/2.1.2/sweetalert.min.js'></script>
-        <script src="./jsapi1.js"></script>
+        <script src="./jsapi.js"></script>
         <!-- <link rel="stylesheet" type="text/css" href="https://www.apple.com/ac/globalnav/6/en_US/styles/ac-globalnav.built.css">
         <link rel="stylesheet" type="text/css" href="https://www.apple.com/ac/localnav/5/styles/ac-localnav.built.css">
         <link rel="stylesheet" type="text/css" href="https://www.apple.com/ac/globalfooter/6/en_US/styles/ac-globalfooter.built.css">

@@ -11,8 +11,5 @@ $db = new PDO($dsn,$user,$pass);
 $db->setAttribute(PDO::ATTR_AUTOCOMMIT, false);
 //设置EXCEPTION异常处理模式
 $db->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
-
-
-
 ?> 
 
