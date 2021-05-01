@@ -1,5 +1,4 @@
 <?php
-
 $dbms='mysql';             //数据库类型
 $host='localhost';         //数据库主机名
 $dbName='yike';            //数据库名

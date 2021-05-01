@@ -78,12 +78,14 @@ while($row=mysqli_fetch_array($res))
     echo "</div></div>";
 }
 echo "</div>";
+
 $sql="SELECT * FROM submited WHERE resevation = '0' and complete = 3 and deleted=0 ORDER BY id DESC";
 $res=mysqli_query($con,$sql);
-
 echo "<div id='accordion'>";
 while($row=mysqli_fetch_array($res))
 {
+    $asql="SELECT * FROM tobedo WHERE wid=".$row['id']." ORDER BY sid DESC";
+    $ares=mysqli_query($con,$asql);
     echo "<div class='card'>";
     echo "<div class='card-header'>";
     echo "<a class='card-link' id='".$row['id']."' data-toggle='collapse' href='#collapseOne".$row['id']."'><b>#".$row['id']."</b>&nbsp;&nbsp;&nbsp;".$row['yname']."</a></div>";
@@ -95,7 +97,11 @@ while($row=mysqli_fetch_array($res))
     echo " <tr> <td  class='card-text'> <b style='width:85px;float:left'>送修物品：</b>".$row['yobject']."</td></tr>";
     echo " <tr> <td  class='card-text'> <b style='width:85px;float:left'>附加物品：</b>".$row['extra']."</td></tr>";
     echo " <tr> <td  class='card-text'> <b style='width:85px;float:left'>问题描述：</b>".$row['des']."</td></tr>";
-    echo " <tr> <td  class='card-text'> <b style='width:85px;float:left'>负责人：</b>".$row['head']."</td></tr>";
+    while($arow=mysqli_fetch_array($ares))
+    {
+      echo " <tr> <td  class='card-text'> <b style='width:85px;float:left'>负责人：</b>".$arow['head']."</td></tr>";
+      echo " <tr> <td  class='card-text'> <b style='width:85px;float:left'>理由：</b>".$arow['reason']."</td></tr>";
+    }
     echo "</tbody></table>";
     echo " <button type='button' class='btn btn-primary' data-toggle='modal' onclick='complete();'>完成已取走</button>";
     echo " <button type='button' class='btn btn-primary' data-toggle='modal' onclick='completebut();'>完成未取走</button>";

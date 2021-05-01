@@ -15,9 +15,6 @@ $today_pending = $row['COUNT(*)'];
 $stmt = $db->query("SELECT COUNT(*) FROM submited WHERE 1");
 $row = $stmt->fetch(PDO::FETCH_ASSOC);
 $all_count = $row['COUNT(*)'];
-
-
-
 ?>
 
 <!DOCTYPE html>
@@ -154,23 +151,8 @@ $all_count = $row['COUNT(*)'];
           </div>
           <div id="author" style="float:margin-bottom;text-align:center;padding-top:10px;font-size:10px;color:grey;">
         团结/高效/务实/创新<br>
-        
-        <a href="https://beian.miit.gov.cn/">鲁 ICP 备 20012845 号</a>
-<br>
-    
-        
+        <a href="https://beian.miit.gov.cn/">鲁 ICP 备 20012845 号</a><br>
           <span style="line-height:0;">Powered by<br>Lotke &nbsp;| &nbsp;Catop<br></span>
-          
-          <?php
-          //一言部分，考虑js前端加载，此处用php影响打开速度。
-        //   $yiyan = file_get_contents("https://v1.hitokoto.cn/");
-        //     $yiyan_text = json_decode($yiyan,true)['hitokoto'];
-        //     if(!empty($yiyan_text))
-        //     {
-        //         echo($yiyan_text);
-        //     }
-          
-          ?>
           </div>
           </div>
           </div>
@@ -199,7 +181,7 @@ border-radius:6px;" >送修</a>
   </a>
     <ul class="navbar-nav">
       <li class="nav-item active">
-        <a class="nav-link" href="#" style="font-size:10px">
+        <a class="nav-link" href="" style="font-size:10px">
         <img src="/img/note.png" width="30" height="30" alt="">
         登记
         <span class="sr-only">(current)</span></a>
@@ -211,7 +193,7 @@ border-radius:6px;" >送修</a>
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#" style="font-size:10px">
+        <a class="nav-link" href="./person.php" style="font-size:10px">
         <img src="/img/user.png" width="30" height="30" alt="">
         个人
         </a>

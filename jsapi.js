@@ -156,43 +156,48 @@ function lockdoor()
 }
 function tobedo()
 {
-    var id = $(".card-link").attr("id");
+    var wid = $(".card-link").attr("id");
     var complete=3;
 
     swal("填写负责人：",{
         content: "input",
       }).then((value)=>{
             var head=value;
-            $.ajax({
-                type: "post",
-                url: "../change.php",
-                data: {"head":head,"id":id,"complete":complete},
-                dataType: "json",//后端返回json数据
-                success: function(msg){
-                    console.log(msg);
-                    var json_errcode = msg['err_code'];
-                    var json_msg = msg['text'];
-                    // console.log(msg['msg']);
-                    if(json_errcode==0)
-                    {
-                        swal({
-                        icon: "success",
-                        text: json_msg,
-                        }).then(function () {
-                            window.location.href = "./admin.php";
-                            
-                        })
-                    }
-                    else
-                    {
-                        swal({
-                            icon: "error",
+            swal("请填写交接进度：",{
+                content:"input",
+            }).then((value)=>{
+                var reason=value;
+                $.ajax({
+                    type: "post",
+                    url: "../tobedo.php",
+                    data: {"head":head,"wid":wid,"complete":complete,"reason":reason},
+                    dataType: "json",//后端返回json数据
+                    success: function(msg){
+                        console.log(msg);
+                        var json_errcode = msg['err_code'];
+                        var json_msg = msg['text'];
+                        // console.log(msg['msg']);
+                        if(json_errcode==0)
+                        {
+                            swal({
+                            icon: "success",
                             text: json_msg,
-                        })
+                            }).then(function () {
+                                window.location.href = "./admin.php";
+                                
+                            })
+                        }
+                        else
+                        {
+                            swal({
+                                icon: "error",
+                                text: json_msg,
+                            })
+                        }
+            
                     }
-        
-                }
-            });
+                });
+            })
       });
 }
 function del()

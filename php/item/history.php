@@ -57,6 +57,8 @@ $res=mysqli_query($con,$sql);
 echo "<div id='accordion'>";
 while($row=mysqli_fetch_array($res))
 {
+    $asql="SELECT * FROM tobedo WHERE wid=".$row['id']." ORDER BY sid DESC";
+    $ares=mysqli_query($con,$asql);
     echo "<div class='card'>";
     echo "<div class='card-header'>";
     echo "<a class='card-link' id='".$row['id']."' data-toggle='collapse' href='#collapseOne".$row['id']."'><b>#".$row['id']."</b>&nbsp;&nbsp;&nbsp;".$row['yname']."</a></div>";
@@ -70,6 +72,9 @@ while($row=mysqli_fetch_array($res))
     echo " <tr> <td  class='card-text'> <b style='width:85px;float:left'>附加物品：</b>".$row['extra']."</td></tr>";
     echo " <tr> <td  class='card-text'> <b style='width:85px;float:left'>送修时间：</b>".$row['ydate']."</td></tr>";
     echo " <tr> <td  class='card-text'> <b style='width:85px;float:left'>完成时间：</b>".$row['cdate']."</td></tr>";
+    while($arow=mysqli_fetch_array($ares)){
+        echo " <tr> <td  class='card-text'> <b style='width:85px;float:left'>负责人：</b>".$arow['head']."</td></tr>";
+      }
     echo " <tr> <td  class='card-text'> <b style='width:85px;float:left'>负责人：</b>".$row['head']."</td></tr>";
     echo "</tbody></table>";
     echo "</div></div>";
