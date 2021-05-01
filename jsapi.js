@@ -165,7 +165,7 @@ function tobedo()
             var head=value;
             $.ajax({
                 type: "post",
-                url: "./change.php",
+                url: "../change.php",
                 data: {"head":head,"id":id,"complete":complete},
                 dataType: "json",//后端返回json数据
                 success: function(msg){
@@ -207,7 +207,7 @@ function del()
             var id=value;
             $.ajax({
                 type: "post",
-                url: "./del.php",
+                url: "../del.php",
                 data: {"id":id},
                 dataType: "json",//后端返回json数据
                 success: function(msg){
@@ -237,36 +237,6 @@ function del()
             });
       });
 
-    // $.ajax({
-    //     type: "post",
-    //     url: "./del.php",
-    //     data: {"id":id},
-    //     dataType: "json",//后端返回json数据
-
-    //     success: function(msg){
-    //         console.log(msg);
-    //         var json_errcode = msg['err_code'];
-    //         var json_msg = msg['text'];
-    //         // console.log(msg['msg']);
-    //         if(json_errcode==0)
-    //         {
-    //             swal({
-    //             icon: "success",
-    //             text: json_msg,
-    //             }).then(function () {
-    //                 window.location.href = "./admin.php"; 
-    //             })
-    //         }
-    //         else
-    //         {
-    //             swal({
-    //                 icon: "error",
-    //                 text: json_msg,
-    //             })
-    //         }
-
-    //     }
-    // });
 }
 function settake()
 {
@@ -276,7 +246,7 @@ function settake()
 
     $.ajax({
         type: "post",
-        url: "./settake.php",
+        url: "../settake.php",
         data: {"id":id},
         dataType: "json",//后端返回json数据
 
@@ -291,7 +261,7 @@ function settake()
                 icon: "success",
                 text: json_msg,
                 }).then(function () {
-                    window.location.href = "./admin.php";
+                    window.location.href = "./nottake.php";
                     
                 })
             }
@@ -351,7 +321,7 @@ function reservation(){
     console.log(id);
     $.ajax({
         type: "post",
-        url: "./resevation.php",
+        url: "../resevation.php",
         data: {"id":id},
         dataType: "json",//后端返回json数据
         success: function(msg){
@@ -365,7 +335,7 @@ function reservation(){
                 icon: "success",
                 text: json_msg,
                 }).then(function () {
-                    window.location.href = "./admin.php";
+                    window.location.href = "./reservation.php";
                     
                 })
             }
@@ -391,7 +361,7 @@ function complete()
             var head=value;
             $.ajax({
                 type: "post",
-                url: "./change.php",
+                url: "../change.php",
                 data: {"head":head,"id":id,"complete":complete},
                 dataType: "json",//后端返回json数据
                 success: function(msg){
@@ -431,7 +401,7 @@ function completebut()
             var head=value;
             $.ajax({
                 type: "post",
-                url: "./change.php",
+                url: "../change.php",
                 data: {"head":head,"id":id,"complete":complete},
                 dataType: "json",//后端返回json数据
                 success: function(msg){

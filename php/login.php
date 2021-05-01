@@ -26,7 +26,7 @@ try{
         {
             echo '登录成功';
             $_SESSION['flag']=1;
-            header('Location: ./admin.php');
+            header('Location: ./item/admin.php');
         }
         else{
             echo '用户名或密码错误';
@@ -43,14 +43,3 @@ catch(PDOException $pdoerr)
     //回滚事务
     $db->rollBack();
 }
-
-// $con = mysql_connect("localhost:3306","yk_submit","FMWwsZJYZehkhDLp");
-// if(!$con)
-// {
-//     die('Could not connect : '. mysql_error());
-// }
-// mysql_select_db("yk_submit",$con);
-// $res=mysql_query("SELECT * FROM admin");
-// $row=mysql_fetch_array($res);
-
-// mysql_close($con);
