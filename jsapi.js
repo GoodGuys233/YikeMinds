@@ -436,3 +436,122 @@ function completebut()
             });
       });
 }
+function signup(){
+    var uname = $("#name").val();
+    var phone = $("#phone").val();
+    var QQ = $("#QQ").val();
+    var mail = $("#mail").val();
+    var passwd = $("#password").val();
+    var cpasswd= $("#confirm-password").val();
+    if (cpasswd != "" && passwd != "") {
+        if (cpasswd == passwd) {
+            $.ajax({
+                type: "post",
+                url: "./php/signup.php",
+                data: {"uname":uname,"phone":phone,"QQ":QQ,"mail":mail,"passwd":passwd},
+                dataType: "json",//后端返回json数据
+        
+                success: function(msg){
+                    console.log(msg);
+                    var json_errcode = msg['err_code'];
+                    var json_msg = msg['text'];
+                    // console.log(msg['msg']);
+                    if(json_errcode==0)
+                    {
+                        swal({
+                        icon: "success",
+                        text: json_msg,
+                        }).then(function () {
+                            window.location.href = "./signin.html";
+                            
+                        })
+                    }
+                    else
+                    {
+                        swal({
+                            icon: "error",
+                            text: json_msg,
+                        })
+                    }
+        
+                }
+            });
+        }
+        else{
+            swal({
+                icon:"error",
+                text:"两次输入密码不一致",
+            })
+        }
+    }
+
+}
+function signin(){
+    var mail = $("#mail").val();
+    var passwd = $("#password").val();
+    $.ajax({
+        type: "post",
+        url: "./php/signin.php",
+        data: {"mail":mail,"passwd":passwd},
+        dataType: "json",//后端返回json数据
+
+        success: function(msg){
+            console.log(msg);
+            var json_errcode = msg['err_code'];
+            var json_msg = msg['text'];
+            // console.log(msg['msg']);
+            if(json_errcode==0)
+            {
+                swal({
+                icon: "success",
+                text: json_msg,
+                }).then(function () {
+                    window.location.href = "./index.php";
+                    
+                })
+            }
+            else
+            {
+                swal({
+                    icon: "error",
+                    text: json_msg,
+                })
+            }
+
+        }
+    });    
+}
+function logout()
+{
+    $.ajax({
+        type: "post",
+        url: "./php/logout.php",
+        data: {},
+        dataType: "json",//后端返回json数据
+
+        success: function(msg){
+            console.log(msg);
+            var json_errcode = msg['err_code'];
+            var json_msg = msg['text'];
+            // console.log(msg['msg']);
+            if(json_errcode==0)
+            {
+                swal({
+                icon: "success",
+                text: json_msg,
+                }).then(function () {
+                    window.location.href = "./index.php";
+                    
+                })
+            }
+            else
+            {
+                swal({
+                    icon: "error",
+                    text: json_msg,
+                })
+            }
+
+        }
+    });    
+}

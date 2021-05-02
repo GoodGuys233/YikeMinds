@@ -1,3 +1,9 @@
+<?
+session_start();
+if(empty($_SESSION['name'])){
+  header('Location: ./signin.html');
+}
+?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -24,20 +30,19 @@
   <span style="text-align:center;font-size:12px;color:grey;padding-bottom:20px">团结/高效/务实/创新</span>
 </div>
 <div class="container">
-  
-  <div class="list-group">
-    <a href="#" class="list-group-item list-group-item-action">手机号<span style="float: right;">110</span></a>
-    <a href="#" class="list-group-item list-group-item-action">姓名<span style="float: right;">测试</span></a>
-    <a href="#" class="list-group-item list-group-item-action">QQ号<span style="float: right;">110</span></a>
-    <a href="#" class="list-group-item list-group-item-action">QQ群<span style="float: right;">110</span></a>
-    <a href="#" class="list-group-item list-group-item-action">我的工单</a>
-    <a href="#" class="list-group-item list-group-item-action">公告</a>
-    <a href="#" class="list-group-item list-group-item-action">关于</a>
-  </div>
-  <div style="padding-top: 20px;">
-  <button type="button" class="btn btn-danger btn-lg btn-block">注销</button>
-  </div>
-  
+<?
+   echo "<div class='list-group'>";
+   echo "<a href='#' class='list-group-item list-group-item-action'>手机号<span style='float: right;'>".$_SESSION['phone']."</span></a>";
+   echo "<a href='#' class='list-group-item list-group-item-action'>姓名<span style='float: right;'>".$_SESSION['name']."</span></a>";
+   echo "<a href='#' class='list-group-item list-group-item-action'>QQ号<span style='float: right;'>".$_SESSION['QQ']."</span></a>";
+   echo "<a href='#' class='list-group-item list-group-item-action'>我的工单</a>";
+   echo "<a href='#' class='list-group-item list-group-item-action'>公告</a>";
+   echo "<a href='#' class='list-group-item list-group-item-action'>关于</a>";
+   echo "</div>";
+   echo "<div style='padding-top: 20px;'>";
+   echo "<button type='button' class='btn btn-danger btn-lg btn-block' onclick='logout();'>注销</button>";
+   echo "</div>";
+?>
 <!--copyright-->
 <div class="container;">
           <div class="jumbotron text-center" style="margin-bottom:16px;margin-top:10px;padding-bottom:55px;padding-top:0px;">

@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <!-- icon css-->
+    <link rel="stylesheet" href="assets/elagent-icon/style.css">
+    <link rel="stylesheet" href="assets/animation/animate.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="shortcut icon" href="./img/yike.png">
+    <script language=javascript src='https://cdn.bootcdn.net/ajax/libs/sweetalert/2.1.2/sweetalert.min.js'></script>
+    <script src="./jsapi.js"></script>
+    <title>账号注册</title>
+</head>
+
+<body data-scroll-animation="true">
+    <div id="preloader">
+        <div id="ctn-preloader" class="ctn-preloader">
+            <div class="round_spinner">
+                <div class="spinner"></div>
+                <div class="text">
+                    <img src="img/yikelogo.png" alt="">
+                    <h4><span>YIKE</span></h4>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="body_wrapper">
+        <section class="signup_area signup_area_height">
+            <div class="row ml-0 mr-0">
+                <div class="sign_left signup_left">
+                    <h1></h1>
+                    <img class="position-absolute top" src="img/signup/top_ornamate.png" alt="top">
+                    <img class="position-absolute bottom" src="img/signup/bottom_ornamate.png" alt="bottom">
+                    <!-- <img class="position-absolute middle wow fadeInRight" src="img/" alt="bottom"> -->
+                    <div class="round wow zoomIn" data-wow-delay="0.2s"></div>
+                </div>
+                <div class="sign_right signup_right">
+                    <div class="sign_inner signup_inner">
+                        <div class="text-center">
+                            <h3>注册您的益科账号</h3>
+                            <p>已有账号? <a href="signin.html">登录</a></p>
+                            
+                        </div>
+                        <div class="divider">
+                            <span class="or-text">或者</span>
+                        </div>
+                        <form action="./php/signup.php" class="row login_form" method="POST">
+                            <div class="col-lg-12 form-group">
+                                <div class="small_text">姓名 </div>
+                                <input type="text" class="form-control" name="name" id="name" placeholder="输入姓名">
+                            </div>
+                            <div class="col-lg-12 form-group">
+                                <div class="small_text">邮箱</div>
+                                <input type="email" class="form-control" id="mail" name="mail" placeholder="输入邮箱">
+                            </div>
+                            <div class="col-lg-12 form-group">
+                                <div class="small_text">QQ</div>
+                                <input type="number" class="form-control" id="QQ" name="QQ" placeholder="输入QQ">
+                            </div>
+                            <div class="col-lg-12 form-group">
+                                <div class="small_text">手机号码</div>
+                                <input id="phone" name="phone" type="number" class="form-control" placeholder="输入手机号" autocomplete="off">
+                            </div>
+                            <div class="col-lg-12 form-group">
+                                <div class="small_text">密码</div>
+                                <input id="password" name="password" type="password" class="form-control" placeholder="输入密码" autocomplete="off">
+                            </div>
+                            <div class="col-lg-12 form-group">
+                                <div class="small_text">确认密码</div>
+                                <input id="confirm-password" name="confirm-password" type="password" class="form-control" placeholder="输入密码" autocomplete="off">
+                            </div>
+                            <div class="col-lg-12 form-group">
+
+                            </div>
+                            <div class="col-lg-12 text-center">
+                                <button type="button" class="btn action_btn thm_btn" onclick="signup();">创建账户</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/pre-loader.js"> </script>
+    <script src="assets/bootstrap/js/popper.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="js/parallaxie.js"></script>
+    <script src="js/TweenMax.min.js"></script>
+    <script src="assets/wow/wow.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

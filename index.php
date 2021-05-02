@@ -30,11 +30,6 @@ $all_count = $row['COUNT(*)'];
         <script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
         <script language=javascript src='https://cdn.bootcdn.net/ajax/libs/sweetalert/2.1.2/sweetalert.min.js'></script>
         <script src="./jsapi.js"></script>
-        <!-- <link rel="stylesheet" type="text/css" href="https://www.apple.com/ac/globalnav/6/en_US/styles/ac-globalnav.built.css">
-        <link rel="stylesheet" type="text/css" href="https://www.apple.com/ac/localnav/5/styles/ac-localnav.built.css">
-        <link rel="stylesheet" type="text/css" href="https://www.apple.com/ac/globalfooter/6/en_US/styles/ac-globalfooter.built.css">
-        <link rel="stylesheet" type="text/css" href="https://www.apple.com/ac/localeswitcher/3/zh_CN/styles/localeswitcher.built.css">
-        <link rel="stylesheet" href="https://www.apple.com/v/home/hb/built/styles/main.built.css" type="text/css"> -->
     </head>
     <body>
         <div class="container">
@@ -43,7 +38,9 @@ $all_count = $row['COUNT(*)'];
                     <img src="./img/yike.png" height=55px>
                 </div>
                 
+                
                 <h3>益科服务队登记表单</h3>
+                
                 
                 <div class='banner_num_view' style="padding-top:20px;font-size:14px;color:grey;" >
                     正在排队<span id='pending_num'></span>项

@@ -9,7 +9,7 @@ if (!isset($_SESSION['flag']))
 <!-- 1234 -->
 <head>
     <title>查看数据</title>
-    <link rel="shortcut icon" href="../img/yike.jpg">
+    <link rel="shortcut icon" href="../../img/yike.jpg">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!--<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">-->
