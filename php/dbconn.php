@@ -1,9 +1,15 @@
 <?php
+
+//获取数据库配置
+$config_str = file_get_contents('../config.json');
+$config = json_decode($config_str,true);
+$DB_config = $config['DataBase'];
+
 $dbms='mysql';             //数据库类型
-$host='localhost';         //数据库主机名
-$dbName='yike';            //数据库名
-$user='yike';              //数据库连接用户名
-$pass='kRfFmTcPJP4w8DYM';                  //密码
+$host=$DB_config['DB_address'];         //数据库主机名
+$dbName=$DB_config['DB_name'];            //数据库名
+$user=$DB_config['DB_user'];              //数据库连接用户名
+$pass=$DB_config['DB_password'];                  //密码
 $dsn="$dbms:host=$host;dbname=$dbName";   //pdo数据源
 $db = new PDO($dsn,$user,$pass);
 //关闭pdo自动提交

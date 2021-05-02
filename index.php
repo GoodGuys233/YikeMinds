@@ -29,9 +29,19 @@ $all_count = $row['COUNT(*)'];
         <script src="https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js"></script>
         <script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
         <script language=javascript src='https://cdn.bootcdn.net/ajax/libs/sweetalert/2.1.2/sweetalert.min.js'></script>
+            <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
         <script src="./jsapi.js"></script>
+        
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+        <!-- icon css-->
+        <link rel="stylesheet" href="assets/elagent-icon/style.css">
+        <link rel="stylesheet" href="assets/animation/animate.css">
+        <!--<link rel="stylesheet" href="css/style.css">-->
+        <link rel="stylesheet" href="css/responsive.css">
     </head>
     <body>
+        
         <div class="container">
             <div class="jumbotron text-center" style="margin-bottom:16px;margin-top:10px;padding-bottom:18px">
                 <div class="logo" style="height:55px;margin-bottom:8px;margin-top:-15px">
@@ -173,25 +183,25 @@ border-radius:6px;" >送修</a>
 <div class="navbar-nav-scroll">
 <nav class="navbar navbar-expand navbar-light bg-light bd-navbar-nav flex-row fixed-bottom">
   <a class="navbar-brand" href="#">
-  <img src="/img/yike.png" width="30" height="30" alt="">
+  <img src="./img/yike.png" width="30" height="30" alt="">
   Yike
   </a>
     <ul class="navbar-nav">
       <li class="nav-item active">
         <a class="nav-link" href="" style="font-size:10px">
-        <img src="/img/note.png" width="30" height="30" alt="">
+        <img src="./img/note.png" width="30" height="30" alt="">
         登记
         <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#" style="font-size:10px">
-        <img src="/img/speak.png" width="30" height="30" alt="">
+        <img src="./img/speak.png" width="30" height="30" alt="">
         BBS
         </a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="./person.php" style="font-size:10px">
-        <img src="/img/user.png" width="30" height="30" alt="">
+        <img src="./img/user.png" width="30" height="30" alt="">
         个人
         </a>
       </li>

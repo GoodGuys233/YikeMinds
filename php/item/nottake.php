@@ -3,7 +3,10 @@ if (!isset($_SESSION['flag']))
 {
   echo "请先登录";
   header('Location: ../login.html');
+  
+
 }
+include("./dbconn.php");
 
 ?>
 <!-- 1234 -->
@@ -11,7 +14,7 @@ if (!isset($_SESSION['flag']))
     <title>查看数据</title>
     <link rel="shortcut icon" href="../../img/yike.jpg">
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=0.9">
     <!--<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">-->
     <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
     
@@ -45,12 +48,7 @@ if (!isset($_SESSION['flag']))
   </ul>
   <div id="menu2" class="container tab-pane"><br>
 <?php
-$con = mysqli_connect("localhost:3306","yike","kRfFmTcPJP4w8DYM");
-if(!$con)
-{
-    die('Could not connect');
-}
-mysqli_select_db($con,"yike");
+
 $sql="SELECT * FROM submited WHERE  complete=2 and deleted=0 ORDER BY id DESC";
 $res=mysqli_query($con,$sql);
 echo "<div id='accordion'>";
@@ -89,13 +87,5 @@ echo "</div>";
   <div id="author" style="float:margin-bottom;text-align:center;padding-top:10px;font-size:12px;color:grey;">
 团结/高效/务实/创新<br>
   <a href="https://beian.miit.gov.cn/">鲁 ICP 备 20012845 号</a><br>
-            <?php
-          $yiyan = file_get_contents("https://v1.hitokoto.cn/");
-            $yiyan_text = json_decode($yiyan,true)['hitokoto'];
-            if(!empty($yiyan_text))
-            {
-                echo($yiyan_text);
-            }
-          
-          ?>
+
   </div>

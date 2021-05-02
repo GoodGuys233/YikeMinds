@@ -8,6 +8,7 @@ if(empty($_SESSION['name'])){
 <html>
     <head>
         <title>个人主页</title>
+
         <link rel="shortcut icon" href="./img/yike.png">
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -61,25 +62,25 @@ if(empty($_SESSION['name'])){
 <div class="navbar-nav-scroll">
 <nav class="navbar navbar-expand navbar-light bg-light bd-navbar-nav flex-row fixed-bottom">
   <a class="navbar-brand" href="#">
-  <img src="/img/yike.png" width="30" height="30" alt="">
+  <img src="./img/yike.png" width="30" height="30" alt="">
   Yike
   </a>
     <ul class="navbar-nav">
       <li class="nav-item">
         <a class="nav-link" href="./index.php" style="font-size:10px">
-        <img src="/img/note.png" width="30" height="30" alt="">
+        <img src="./img/note.png" width="30" height="30" alt="">
         登记
         <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#" style="font-size:10px">
-        <img src="/img/speak.png" width="30" height="30" alt="">
+        <img src="./img/speak.png" width="30" height="30" alt="">
         BBS
         </a>
       </li>
       <li class="nav-item active">
         <a class="nav-link" href="#" style="font-size:10px">
-        <img src="/img/user.png" width="30" height="30" alt="">
+        <img src="./img/user.png" width="30" height="30" alt="">
         个人
         </a>
       </li>

@@ -1,5 +1,5 @@
 <?
-header('Content-Type:application/json; charset=utf-8');
+//header('Content-Type:application/json; charset=utf-8');
 include "dbconn.php";
 $uname=$_POST['uname'];
 $phone=$_POST['phone'];
