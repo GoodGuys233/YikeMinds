@@ -18,13 +18,36 @@ if(empty($_SESSION['name'])){
         <script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
         <script language=javascript src='https://cdn.bootcdn.net/ajax/libs/sweetalert/2.1.2/sweetalert.min.js'></script>
         <script src="./jsapi.js"></script>
-        <!-- <link rel="stylesheet" type="text/css" href="https://www.apple.com/ac/globalnav/6/en_US/styles/ac-globalnav.built.css">
-        <link rel="stylesheet" type="text/css" href="https://www.apple.com/ac/localnav/5/styles/ac-localnav.built.css">
-        <link rel="stylesheet" type="text/css" href="https://www.apple.com/ac/globalfooter/6/en_US/styles/ac-globalfooter.built.css">
-        <link rel="stylesheet" type="text/css" href="https://www.apple.com/ac/localeswitcher/3/zh_CN/styles/localeswitcher.built.css">
-        <link rel="stylesheet" href="https://www.apple.com/v/home/hb/built/styles/main.built.css" type="text/css"> -->
+        <!-- 外部引入开始 -->
+        <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+        <!-- icon css-->
+        <link rel="stylesheet" href="assets/elagent-icon/style.css">
+        <link rel="stylesheet" href="assets/animation/animate.css">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/responsive.css">
+        <script src="js/jquery-3.2.1.min.js"></script>
+        <script src="js/pre-loader.js"> </script>
+        <script src="assets/bootstrap/js/popper.min.js"></script>
+        <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+        <script src="js/parallaxie.js"></script>
+        <script src="js/TweenMax.min.js"></script>
+        <script src="js/main.js"></script>
+        <!-- 外部引用结束 -->
         </style>
 </head>
+<body data-scroll-animation="true">
+<div id="preloader">
+        <div id="ctn-preloader" class="ctn-preloader">
+            <div class="round_spinner">
+                <div class="spinner"></div>
+                <div class="text">
+                    <img src="img/yikelogo.png" alt="">
+                    <h5><span>益科创新</span></h5>
+                </div>
+            </div>
+            <b><span>团结/高效/务实/创新</span></b>
+        </div>
+    </div>
 <div style="text-align:center;padding-top:50px;font-size:27px;color:black;">
   <img src="./img/yike.png" height=80px>
   山东科技大学益科服务队</br>

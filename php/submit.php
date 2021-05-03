@@ -1,15 +1,24 @@
 <?php
 header('Content-Type:application/json; charset=utf-8');
 include "dbconn.php";
+session_start();
 
 //返回值
 $ret_msg = array();
-
+if(empty($_SESSION['name']))
+{
+    $ret_msg['err_code']=1;
+    $ret_msg['text'] = '请点击个人页面登录';
+    die(json_encode($ret_msg));
+}
 error_reporting(E_ALL ^ E_DEPRECATED);
 $ip = $_SERVER["REMOTE_ADDR"];
-$name=$_POST['name'];
-$phone=$_POST['phone'];
-$QQ=$_POST['QQ'];
+// $name=$_POST['name'];
+// $phone=$_POST['phone'];
+// $QQ=$_POST['QQ'];
+$name=$_SESSION['name'];
+$phone=$_SESSION['phone'];
+$QQ=$_SESSION['QQ'];
 $obj=$_POST['obj'];
 $extra=$_POST['extra'];
 $datetime= new DateTime();
@@ -20,33 +29,7 @@ $res=$_POST['预约'];
 $des=$_POST['des'];
 $ret_msg['err_code'] = '1';
 $ret_msg['text'] = '未知错误，请联系工作人员!';
-#if($res!='0')
-#{
-    #if($day!=0 && $day!=6)
-    #{
-    #$ret_msg['err_code'] = '1';
-    #$ret_msg['text'] = '只有周六和周日上午才能预约哦';
-    #die(json_encode($ret_msg));
-    #}
-    #if($day==0 && $sdate == 'pm')
-    #{
-    #$ret_msg['err_code'] = '1';
-    #$ret_msg['text'] = '只有周六和周日上午才可以预约哦';
-   # die(json_encode($ret_msg));        
-    #}
-#}
-if(strlen($name)>15 || strlen($name)<6)
-{
-    $ret_msg['err_code'] = '1';
-    $ret_msg['text'] = '请填写正常的姓名';
-    die(json_encode($ret_msg));
-}
-elseif (!is_numeric($phone)||strlen($phone)!=11) {
-    $ret_msg['err_code'] = '1';
-    $ret_msg['text'] = '电话号码位数错误';
-    die(json_encode($ret_msg));
-}
-elseif(strlen($obj)>60 || strlen($obj)<6){
+if(strlen($obj)>60 || strlen($obj)<6){
     $ret_msg['err_code'] = '1';
     $ret_msg['text'] = '请认真填写您的送修物品';
     die(json_encode($ret_msg));
@@ -62,8 +45,6 @@ elseif(strlen($des)>600 || strlen($des)<3){
     $ret_msg['text'] = '描述过长或过短';
     die(json_encode($ret_msg));
 }
-
-
 //ip限制开始
 $datetime= new DateTime();
 $current_date=$datetime->format('Y-m-d');

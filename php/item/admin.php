@@ -23,6 +23,8 @@ include("./dbconn.php");
     <script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <script language=javascript src='https://cdn.bootcdn.net/ajax/libs/sweetalert/2.1.2/sweetalert.min.js'></script>
     <script src="../../jsapi.js"></script>
+</head>
+<body>
     <div class="container">
   <br>
 
@@ -129,3 +131,4 @@ echo "</div>";
   <a href="https://beian.miit.gov.cn/">鲁 ICP 备 20012845 号</a><br>
         
   </div>
+  </body>

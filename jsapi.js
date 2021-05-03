@@ -1,9 +1,9 @@
 function submit_item()
 {
 
-    var name = $("#name").val();
-    var phone = $("#phone").val();
-    var QQ = $("#QQ").val();
+    // var name = $("#name").val();
+    // var phone = $("#phone").val();
+    // var QQ = $("#QQ").val();
     var obj = $("#obj").val();
     var des = $("#des").val();
     var extra = $("#extra").val();
@@ -32,7 +32,7 @@ function submit_item()
                     $.ajax({
         type: "post",
         url: "./php/submit.php",
-        data: {"name":name,"phone":phone,"QQ":QQ,"obj":obj,'des':des,"extra":extra,"预约":preserve},
+        data: {"obj":obj,'des':des,"extra":extra,"预约":preserve},
         dataType: "json",//后端返回json数据
 
         success: function(msg){
@@ -70,7 +70,7 @@ function submit_item()
                     $.ajax({
         type: "post",
         url: "./php/submit.php",
-        data: {"name":name,"phone":phone,"QQ":QQ,"obj":obj,'des':des,"extra":extra,"预约":preserve},
+        data: {"obj":obj,'des':des,"extra":extra,"预约":preserve},
         dataType: "json",//后端返回json数据
 
         success: function(msg){
@@ -209,37 +209,45 @@ function del()
     swal("请输入本条登记信息的工单号以确认：",{
         content: "input",
       }).then((value)=>{
-            var id=value;
-            $.ajax({
-                type: "post",
-                url: "../del.php",
-                data: {"id":id},
-                dataType: "json",//后端返回json数据
-                success: function(msg){
-                    console.log(msg);
-                    var json_errcode = msg['err_code'];
-                    var json_msg = msg['text'];
-                    // console.log(msg['msg']);
-                    if(json_errcode==0)
-                    {
-                        swal({
-                        icon: "success",
-                        text: json_msg,
-                        }).then(function () {
-                            window.location.href = "./admin.php";
-                            
-                        })
-                    }
-                    else
-                    {
-                        swal({
-                            icon: "error",
+            var id1=value;
+            if(id1==id){
+                $.ajax({
+                    type: "post",
+                    url: "../del.php",
+                    data: {"id":id},
+                    dataType: "json",//后端返回json数据
+                    success: function(msg){
+                        console.log(msg);
+                        var json_errcode = msg['err_code'];
+                        var json_msg = msg['text'];
+                        // console.log(msg['msg']);
+                        if(json_errcode==0)
+                        {
+                            swal({
+                            icon: "success",
                             text: json_msg,
-                        })
+                            }).then(function () {
+                                window.location.href = "./admin.php";
+                                
+                            })
+                        }
+                        else
+                        {
+                            swal({
+                                icon: "error",
+                                text: json_msg,
+                            })
+                        }
+            
                     }
-        
-                }
-            });
+                });
+            }
+            else{
+                swal({
+                    icon:"error",
+                    text:"输入的工单号不一致!!",
+                })
+            }
       });
 
 }

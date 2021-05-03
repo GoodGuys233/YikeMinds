@@ -596,16 +596,6 @@ ul.list-style li:last-child {
 }
 
 /*================= header area css ===============*/
-.navbar {
-  border: 0;
-  border-radius: 0;
-  padding: 0;
-  width: 100%;
-  left: 0;
-  top: 0;
-  z-index: 20;
-  position: absolute;
-}
 
 .menu_one {
   background: transparent;

@@ -23,6 +23,8 @@ include("./dbconn.php");
     <script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <script language=javascript src='https://cdn.bootcdn.net/ajax/libs/sweetalert/2.1.2/sweetalert.min.js'></script>
     <script src="../../jsapi.js"></script>
+</head>
+<body>
     <div class="container">
   <br>
 
@@ -70,6 +72,7 @@ while($row=mysqli_fetch_array($res))
     echo " <tr> <td  class='card-text'> <b style='width:85px;float:left'>负责人：</b>".$row['head']."</td></tr>";
     echo "</tbody></table>";
     echo " <button type='button' class='btn btn-primary' data-toggle='modal' onclick='settake();'>确认已取走</button>";
+    echo " <button type='button' class='btn btn btn-danger' data-toggle='modal' onclick='del();' style='float:right;'>删除</button>";
     echo "</div></div>";
 }
 echo "</div>";
@@ -89,3 +92,4 @@ echo "</div>";
   <a href="https://beian.miit.gov.cn/">鲁 ICP 备 20012845 号</a><br>
 
   </div>
+  </body>
