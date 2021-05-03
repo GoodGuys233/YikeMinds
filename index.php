@@ -108,11 +108,7 @@ $all_count = $row['COUNT(*)'];
               <div class="small_text">附加物品 (如有密码请备注密码):</div>
                 <input type="text" class="form-control" id="extra" name="extra" placeholder="如充电器、鼠标等 (如有密码请备注密码)" maxlength="200" >
               </div>
-            
-            <div class="col-lg-12 form-group" style="font-size:11px;color:grey;">
-                <label for="text">客户端参数:</label>
-                <span id="client_info"></span>
-              </div>
+
                  
                  <script>get_client_info();</script>
                 <!-- 模态框 -->
@@ -190,22 +186,22 @@ $all_count = $row['COUNT(*)'];
   Yike
   </a>
     <ul class="navbar-nav">
-      <li class="nav-item active">
+      <li class="nav-item active" style="margin:0 6vw">
         <a class="nav-link" href="" style="font-size:10px">
         <img src="./img/note.png" width="30" height="30" alt="">
-        登记
+        
         <span class="sr-only">(current)</span></a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#" style="font-size:10px">
+      <li class="nav-item" style="margin:0 6vw">
+        <a class="nav-link" href="./bbs" style="font-size:10px">
         <img src="./img/speak.png" width="30" height="30" alt="">
-        BBS
+
         </a>
       </li>
-      <li class="nav-item">
+      <li class="nav-item" style="margin:0 6vw">
         <a class="nav-link" href="./person.php" style="font-size:10px">
         <img src="./img/user.png" width="30" height="30" alt="">
-        个人
+
         </a>
       </li>
     </ul>

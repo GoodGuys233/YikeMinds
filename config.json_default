@@ -1,0 +1,8 @@
+{
+    "DataBase":{
+        "DB_name":"",
+        "DB_user":"",
+        "DB_password":"",
+        "DB_address":"localhost"
+    }
+}

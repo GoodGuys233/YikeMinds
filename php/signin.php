@@ -30,5 +30,7 @@ catch(PDOException $pdoerr)
 {
     //回滚事务
     $db->rollBack();
+    echo(json_encode($ret_msg));
+    die();
 }
 echo(json_encode($ret_msg));
