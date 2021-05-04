@@ -176,7 +176,7 @@ $all_count = $row['COUNT(*)'];
           </div>
         </div>
 
-          <!-- 底栏开始 -->
+<!-- 底栏开始 -->
 <div class="navbar-nav-scroll">
 <nav class="navbar navbar-expand navbar-light bg-light bd-navbar-nav flex-row fixed-bottom">
   <a class="navbar-brand" href="#">
