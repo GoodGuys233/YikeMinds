@@ -16,6 +16,7 @@
     <link rel="shortcut icon" href="./img/yike.png">
     <script language=javascript src='https://cdn.bootcdn.net/ajax/libs/sweetalert/2.1.2/sweetalert.min.js'></script>
     <script src="./jsapi.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="https://cdn.staticfile.org/vue-resource/1.5.1/vue-resource.min.js"></script>
     <title>我的工单</title>
 </head>
@@ -42,30 +43,45 @@
             </div>
             <div class="changelog_inner" id="user_tickets">
                 <!-- 单个工单开始 -->
-                <div class="row changelog_info" id="v1">
+                <div class="row changelog_info" id="v1" v-for="(item,idx) in vtickets">
                     <div class="col-lg-3 changelog_date">
                         <div class="c_date">
-                            <h6>Jun 14, 2020 </h6>
-                            <p>Version Name</p>
+                            <h6>{{item.submit_object}} #{{item.submit_id}}</h6>
+                            <p>{{item.submit_time}}</p>
                         </div>
 
                     </div>
                     <div class="col-lg-2">
+                        <div style="height: 20px; margin-bottom: 10px; position: relative;top:-10px"  v-if="item.rev_flag==1">
+                            <p><span style=" background-color:orange; padding: 4px; color: white; border-radius: 4px;">预约单</span></p>
+                        </div>
                         <div class="version_info">
-                            <div class="c_version">
-                                1.6
+                            <div style="background-color:aliceblue; color:dimgray; width: 80vw; border-radius: 4px; padding: 5px;">
+                                问题描述：{{item.submit_des}}
                             </div>
+                            <div style="background-color:aliceblue; color:dimgray; width: 80vw; border-radius: 4px; padding: 5px;margin-top: -2px;">
+                                附加物品：{{item.submit_extra}}
+                            </div>
+                            
                             <div class="line bottom_half"></div>
                         </div>
                     </div>
                     <div class="col-lg-7">
                         <div class="changelog_content">
-                            <p><span class="improve">Improvement</span>Can I use just the Grid?</p>
-                            <p><span class="new">New</span>Added WooCommerce functionality</p>
-                            <p><span class="new">New</span> Template Header</p>
-                            <p><span class="new">New</span>SEO Agency Prebuilt Website</p>
-                            <p><span class="new">New</span>Why is Foundation free?</p>
-                            <p><span class="new">New</span>Added Services, Cases pages</p>
+                            <p><span class="improve">志愿者接单</span><br>{{item.submit_time}}</p>
+                            <div v-if="item.todos.length>0">
+                                <div v-for="(todo,todoi) in item.todos">
+                                    <p><span class="update"><b>工单挂起</b></span><b>{{todo.reason}}</b> ——{{todo.head}}<br>{{todo.time}}</p>
+                                </div>
+                            </div>
+                            <div v-if="item.cmplete_flag==2 || item.cmplete_flag==1">
+                                    <p><span class="fixed"><b>已完待取</b></span> ——{{item.cmplete_head}}<br>{{item.cmplete_time}}</p>
+                            </div>
+
+                            <div v-if="item.cmplete_flag==1">
+                                <p><span class="new"><b>已取件</b></span><br></p>
+                            </div>
+                            
                         </div>
                     </div>
                 </div>
@@ -80,13 +96,9 @@
                         vtickets:undefined,
                     },
                     mounted:function(){
-						this.$http.post('./php/get_user_tickets.php',{"":""},{emulateJSON:true}).then(function(res){
-							this.post_title = res.body.post_title;
-							this.post_content = res.body.post_content;
-							this.post_user = res.body.user_name;
-							this.post_time = res.body.post_time;
-							this.post_tag = res.body.post_tag;
-							this.post_reply = res.body.reply;
+						this.$http.post('./php/get_user_tickets.php',{1:"1"},{emulateJSON:true}).then(function(res){
+							this.vtickets = res.body;
+                            console.log(this.vtickets);
 						},function(res){
 							//console.log(res.status);
 							console.log('请求后台接口成功');

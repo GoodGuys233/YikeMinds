@@ -66,9 +66,18 @@ try{
     //开始事务处理
     $db->beginTransaction(); 
     //pdo状态（prepare为预处理语句）
-    $stmt = $db->prepare("INSERT INTO submited (yname,phone,QQ,yobject,extra,ydate,resevation,des,ip) VALUES (?,?,?,?,?,?,?,?,?)");
-    //绑定参数并执行sql语句
-    $stmt -> execute(array($name,$phone,$QQ,$obj,$extra,$date,$res,$des,$ip));
+    
+    if($res == '0'){
+        $stmt = $db->prepare("INSERT INTO submited (yname,phone,QQ,yobject,extra,ydate,resevation,des,ip) VALUES (?,?,?,?,?,?,?,?,?)");
+        $stmt -> execute(array($name,$phone,$QQ,$obj,$extra,$date,$res,$des,$ip));
+    }
+    else{
+        $stmt = $db->prepare("INSERT INTO submited (yname,phone,QQ,yobject,extra,ydate,resevation,des,ip,rev_flag) VALUES (?,?,?,?,?,?,?,?,?,?)");
+        $rev_flag = '1';
+        $stmt -> execute(array($name,$phone,$QQ,$obj,$extra,$date,$res,$des,$ip,$rev_flag));
+    }
+    
+
     //返回项目id
     $pid = $db->lastInsertId();
     
@@ -83,7 +92,7 @@ catch(PDOException $pdoerr)
     //回滚事务
     $db->rollBack();
     $ret_msg['err_code'] = '1';
-    $ret_msg['text'] = '数据库错误';
+    $ret_msg['text'] = "数据库错误";
 }
 
 
