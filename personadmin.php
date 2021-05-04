@@ -3,8 +3,8 @@ session_start();
 if(empty($_SESSION['name'])){
   header('Location: ./signin.html');
 }
-if($_SESSION['type']=="admin"){
-  header('Location: ./personadmin.php');
+if($_SESSION['type']=="user"){
+  header('Location: ./person.php');
 }
 ?>
 <!DOCTYPE html>
@@ -62,7 +62,7 @@ if($_SESSION['type']=="admin"){
    echo "<a href='#' class='list-group-item list-group-item-action'>手机号<span style='float: right;'>".$_SESSION['phone']."</span></a>";
    echo "<a href='#' class='list-group-item list-group-item-action'>姓名<span style='float: right;'>".$_SESSION['name']."</span></a>";
    echo "<a href='#' class='list-group-item list-group-item-action'>QQ号<span style='float: right;'>".$_SESSION['QQ']."</span></a>";
-   echo "<a href='#' class='list-group-item list-group-item-action'>我的工单</a>";
+   echo "<a href='./php/item/admin.php' class='list-group-item list-group-item-action'>后台管理</a>";
    echo "<a href='#' class='list-group-item list-group-item-action'>公告</a>";
    echo "<a href='#' class='list-group-item list-group-item-action'>关于</a>";
    echo "</div>";

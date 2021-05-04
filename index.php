@@ -109,8 +109,6 @@ $all_count = $row['COUNT(*)'];
                 <input type="text" class="form-control" id="extra" name="extra" placeholder="如充电器、鼠标等 (如有密码请备注密码)" maxlength="200" >
               </div>
 
-                 
-                 <script>get_client_info();</script>
                 <!-- 模态框 -->
                 <div class="modal fade" id="myModal">
                   <div class="modal-dialog">
@@ -187,7 +185,7 @@ $all_count = $row['COUNT(*)'];
   </a>
     <ul class="navbar-nav">
       <li class="nav-item active" style="margin:0 6vw">
-        <a class="nav-link" href="" style="font-size:10px">
+        <a class="nav-link" href="./index.php" style="font-size:10px">
         <img src="./img/note.png" width="30" height="30" alt="">
         
         <span class="sr-only">(current)</span></a>

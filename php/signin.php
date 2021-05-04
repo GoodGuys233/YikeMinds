@@ -20,6 +20,7 @@ try{
         $_SESSION['phone'] = $row['phone'];
         $_SESSION['QQ'] = $row['QQ'];
         $_SESSION['mail'] = $row['mail'];
+        $_SESSION['type']=$row['user_type'];
     }
     else{
         $ret_msg['err_code'] = '1';

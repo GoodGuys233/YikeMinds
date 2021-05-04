@@ -514,7 +514,7 @@ function signin(){
                 icon: "success",
                 text: json_msg,
                 }).then(function () {
-                    window.location.href = "./index.php";
+                    window.location.href = "./person.php";
                     
                 })
             }

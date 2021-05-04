@@ -1,11 +1,14 @@
 <?php session_start() ;
-if (!isset($_SESSION['flag']))
+if (empty($_SESSION['name']))
 {
-  echo "请先登录";
-  header('Location: ../login.html');
-  
+  echo "请登录";
+  header('Location: ../../signin.html');
 }
-
+if ($_SESSION['type']=="user")
+{
+  echo "拒绝访问";
+  header('Location: ../../signin.html');
+}
 include("./dbconn.php");
 
 ?>
@@ -75,18 +78,43 @@ while($row=mysqli_fetch_array($res))
 echo "</div>";
 ?>
     </div>
-    <div id="copyright" style="float:margin-bottom;text-align:center;padding-top:60px;font-size:13px">
+    <div id="copyright" style="float:margin-bottom;text-align:center;padding-top:60px;font-size:13px;padding-bottom:60px;">
     <div class="logo" style="height:35px;margin-bottom:8px;margin-top:-15px">
     <a href="../door.php"><img src="../../img/yike.png" height=35px></a>
     </div>
   <span>
   ©2016-2021<br>山东科技大学益科服务团队<br>
   </span>
-  
-  </div>
-  <div id="author" style="float:margin-bottom;text-align:center;padding-top:10px;font-size:12px;color:grey;">
 团结/高效/务实/创新<br>
   <a href="https://beian.miit.gov.cn/">鲁 ICP 备 20012845 号</a><br>
-
   </div>
+
+  <div class="navbar-nav-scroll">
+<nav class="navbar navbar-expand navbar-light bg-light bd-navbar-nav flex-row fixed-bottom">
+  <a class="navbar-brand" href="#">
+  <img src="../../img/yike.png" width="30" height="30" alt="">
+  Yike
+  </a>
+    <ul class="navbar-nav">
+      <li class="nav-item active" style="margin:0 6vw">
+        <a class="nav-link" href="../../index.php" style="font-size:10px">
+        <img src="../../img/note.png" width="30" height="30" alt="">
+        
+        <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item" style="margin:0 6vw">
+        <a class="nav-link" href="../../bbs" style="font-size:10px">
+        <img src="../../img/speak.png" width="30" height="30" alt="">
+
+        </a>
+      </li>
+      <li class="nav-item" style="margin:0 6vw">
+        <a class="nav-link" href="../../person.php" style="font-size:10px">
+        <img src="../../img/user.png" width="30" height="30" alt="">
+
+        </a>
+      </li>
+    </ul>
+</nav>
+</div>
   </body>
