@@ -155,16 +155,16 @@ $all_count = $row['COUNT(*)'];
                     </div>
                   </div>
                 </div>
-                <div class="col-lg-12 text-center">
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">预约点我</button> 
-                <button type="button" class="btn btn-primary" onclick="submit_item();">确认提交</button>
+                <div class="col-lg-12">
+                <button type="button" style="float: left; margin:10px;padding:10px" class="btn btn-primary" data-toggle="modal" data-target="#myModal">预约时间</button> 
+                <button type="button" style="float: right; margin:10px;padding:10px" class="btn btn-primary" onclick="submit_item();">确认提交</button>
                 </div>
             </form>
 
 
 
           <!-- <div class="jumbotron text-center" style="margin-bottom:6px;margin-top:55px;padding-bottom:5px;padding-top: 2px;"> -->
-          <div id="copyright" style="float:margin-bottom;text-align:center;padding-top:px;font-size:12px">
+          <div id="copyright" style="float:margin-bottom;text-align:center;padding-top:30px;font-size:12px">
           <span>
           ©2016-2021<br>山东科技大学益科服务团队<br>
           </span>         
