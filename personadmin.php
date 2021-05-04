@@ -55,10 +55,10 @@ if ($_SESSION['type'] == "user") {
 
         <div class="sign_right signup_right">
           <div class="sign_inner signup_inner">
-            <div style="text-align:center;padding-top:0px;font-size:27px;color:black;">
-              <img src="./img/yike.png" height=80px>
+          <div style="text-align:center;padding-top:0px;font-size:24px;color:black;">
+              <img src="./img/yike.png" height=60px>
               山东科技大学益科服务队</br>
-              <span style="text-align:center;font-size:12px;color:grey;padding-bottom:20px">团结/高效/务实/创新</span>
+              <div style="font-size:12px;color:grey;position:relative;left:20px !important;top:-10px;padding-bottom:10px">团 结 / 高 效 / 务 实 / 创 新</div>
             </div>
             <div class="container">
               <?
