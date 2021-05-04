@@ -13,10 +13,10 @@
 
     $(window).on( 'load', function() {
         setTimeout(function () {
-            $('#preloader').fadeOut(500, function () {
+            $('#preloader').fadeOut(200, function () {
                 $('#preloader').removeClass('loading');
             });
-        }, 500);
+        }, 200);
     })
 
 })(jQuery)

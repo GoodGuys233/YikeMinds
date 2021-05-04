@@ -39,19 +39,17 @@ if($_SESSION['type']=="admin"){
         </style>
 </head>
 <body data-scroll-animation="true">
-<div id="preloader">
-        <div id="ctn-preloader" class="ctn-preloader">
-            <div class="round_spinner">
-                <div class="spinner"></div>
-                <div class="text">
-                    <img src="img/yikelogo.png" alt="">
-                    <h5><span>益科创新</span></h5>
-                </div>
-            </div>
-            <b><span>团结/高效/务实/创新</span></b>
-        </div>
+
+<div class="sign_left signup_left" style="height: 30px;position:fixed !important;">
+        <h1></h1>
+        <img class="position-absolute top" src="img/signup/top_ornamate.png" alt="top">
+        <img class="position-absolute bottom" src="img/signup/bottom_ornamate.png" alt="bottom">
+        <!-- <img class="position-absolute middle wow fadeInRight" src="img/" alt="bottom"> -->
+        <div class="round wow zoomIn" data-wow-delay="0.2s"></div>
     </div>
-<div style="text-align:center;padding-top:50px;font-size:27px;color:black;">
+
+
+<div style="text-align:center;padding-top:70px;font-size:27px;color:black;">
   <img src="./img/yike.png" height=80px>
   山东科技大学益科服务队</br>
   <span style="text-align:center;font-size:12px;color:grey;padding-bottom:20px">团结/高效/务实/创新</span>
