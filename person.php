@@ -23,19 +23,9 @@ if ($_SESSION['type'] == "admin") {
   <script language=javascript src='https://cdn.bootcdn.net/ajax/libs/sweetalert/2.1.2/sweetalert.min.js'></script>
   <script src="./jsapi.js"></script>
   <!-- 外部引入开始 -->
-  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
-  <!-- icon css-->
-  <link rel="stylesheet" href="assets/elagent-icon/style.css">
-  <link rel="stylesheet" href="assets/animation/animate.css">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/responsive.css">
-  <script src="js/jquery-3.2.1.min.js"></script>
   <script src="js/pre-loader.js"> </script>
-  <script src="assets/bootstrap/js/popper.min.js"></script>
-  <script src="assets/bootstrap/js/bootstrap.min.js"></script>
-  <script src="js/parallaxie.js"></script>
-  <script src="js/TweenMax.min.js"></script>
-  <script src="js/main.js"></script>
   <!-- 外部引用结束 -->
   </style>
 </head>
