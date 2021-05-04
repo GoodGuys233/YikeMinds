@@ -1,9 +1,4 @@
 <?php session_start() ;
-if (!isset($_SESSION['flag']))
-{
-  echo "请先登录";
-  header('Location: ../login.html');
-}
 header('Content-Type:application/json; charset=utf-8');
 include "dbconn.php";
 

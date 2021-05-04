@@ -4,7 +4,7 @@ $_SESSION['name']='';
 $_SESSION['phone'] = '';
 $_SESSION['QQ'] = '';
 $_SESSION['mail'] = '';
-$_SESSION['type']='user';
+$_SESSION['type']='';
 
 
 $ret_msg=array();

@@ -1,8 +1,8 @@
 <?php session_start() ;
-if (!isset($_SESSION['flag']))
+if (empty($_SESSION['name']))
 {
   echo "请先登录";
-  header('Location: ../login.html');
+  header('Location: ../signin.html');
 }
 ?>
 <head>
