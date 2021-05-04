@@ -70,8 +70,8 @@ while($row=mysqli_fetch_array($res))
     echo " <tr> <td  class='card-text'> <b style='width:85px;float:left'>问题描述：</b>".$row['des']."</td></tr>";
     echo " <tr> <td  class='card-text'> <b style='width:85px;float:left'>预约时间：</b>".$row['resevation']."</td></tr>";
     echo "</tbody></table>";
-    echo " <button type='button' class='btn btn-primary' data-toggle='modal' onclick='reservation();'>确认到场</button>";
-    echo " <button type='button' class='btn btn btn-danger' data-toggle='modal' onclick='del();' style='float:right;'>删除</button>";
+    echo " <button type='button' class='btn btn-primary' data-toggle='modal' onclick='reservation(".$row['id'].");'>确认到场</button>";
+    echo " <button type='button' class='btn btn btn-danger' data-toggle='modal' onclick='del(".$row['id'].");' style='float:right;'>删除</button>";
     echo "</div></div>";
      
 }

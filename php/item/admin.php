@@ -108,10 +108,10 @@ while($row=mysqli_fetch_array($res))
       echo " <tr> <td  class='card-text'> <b style='width:85px;float:left'>理由：</b>".$arow['reason']."</td></tr>";
     }
     echo "</tbody></table>";
-    echo " <button type='button' class='btn btn-primary' data-toggle='modal' onclick='complete();'>完成已取走</button>";
-    echo " <button type='button' class='btn btn-primary' data-toggle='modal' onclick='completebut();'>完成未取走</button>";
-    echo " <button type='button' class='btn btn-primary' data-toggle='modal' onclick='tobedo();'>代交接</button>";
-    echo " <button type='button' class='btn btn btn-danger' data-toggle='modal' onclick='del();' style='float:right;'>删除</button>";
+    echo " <button type='button' class='btn btn-primary' data-toggle='modal' onclick='complete(".$row['id'].");'>完成已取走</button>";
+    echo " <button type='button' class='btn btn-primary' data-toggle='modal' onclick='completebut(".$row['id'].");'>完成未取走</button>";
+    echo " <button type='button' class='btn btn-primary' data-toggle='modal' onclick='tobedo(".$row['id'].");'>代交接</button>";
+    echo " <button type='button' class='btn btn btn-danger' data-toggle='modal' onclick='del(".$row['id'].");' style='float:right;'>删除</button>";
     echo "</div></div>";
 }
 echo "</div>";

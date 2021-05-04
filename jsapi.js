@@ -154,9 +154,9 @@ function lockdoor()
         }
         }); 
 }
-function tobedo()
+function tobedo(wid)
 {
-    var wid = $(".card-link").attr("id");
+    // var wid = $(".card-link").attr("id");
     var complete=3;
 
     swal("填写负责人：",{
@@ -200,9 +200,9 @@ function tobedo()
             })
       });
 }
-function del()
+function del(id)
 {
-    var id = $(".card-link").attr("id");
+    // var id = $(".card-link").attr("id");
 
     console.log(id);
     //console.log(preserve);
@@ -251,9 +251,9 @@ function del()
       });
 
 }
-function settake()
+function settake(id)
 {
-    var id = $(".card-link.take").attr("id");
+    // var id = $(".card-link.take").attr("id");
     console.log(id);
     //console.log(preserve);
 
@@ -329,8 +329,8 @@ function check_num()
         } //成功后回调函数结束
     });  //ajax请求结束
 }
-function reservation(){
-    var id = $(".card-link.pre").attr("id");
+function reservation(id){
+
     console.log(id);
     $.ajax({
         type: "post",
@@ -364,9 +364,9 @@ function reservation(){
     });
 
 }
-function complete()
+function complete(id)
 {
-    var id = $(".card-link").attr("id");
+    // var id = $(".card-link").attr("id");
     var complete=1;
     swal("填写负责人：",{
         content: "input",
@@ -404,9 +404,9 @@ function complete()
             });
       });
 }
-function completebut()
+function completebut(id)
 {
-    var id = $(".card-link").attr("id");
+    // var id = $(".card-link").attr("id");
     var complete=2;
     swal("填写负责人：",{
         content: "input",

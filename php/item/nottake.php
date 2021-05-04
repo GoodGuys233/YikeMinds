@@ -74,8 +74,8 @@ while($row=mysqli_fetch_array($res))
     echo " <tr> <td  class='card-text'> <b style='width:85px;float:left'>完成时间：</b>".$row['cdate']."</td></tr>";
     echo " <tr> <td  class='card-text'> <b style='width:85px;float:left'>负责人：</b>".$row['head']."</td></tr>";
     echo "</tbody></table>";
-    echo " <button type='button' class='btn btn-primary' data-toggle='modal' onclick='settake();'>确认已取走</button>";
-    echo " <button type='button' class='btn btn btn-danger' data-toggle='modal' onclick='del();' style='float:right;'>删除</button>";
+    echo " <button type='button' class='btn btn-primary' data-toggle='modal' onclick='settake(".$row['id'].");'>确认已取走</button>";
+    echo " <button type='button' class='btn btn btn-danger' data-toggle='modal' onclick='del(".$row['id'].");' style='float:right;'>删除</button>";
     echo "</div></div>";
 }
 echo "</div>";
