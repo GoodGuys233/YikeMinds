@@ -47,7 +47,7 @@ try
         $ret_msg['postct'][$i]['post_title'] = $rows_post[$i]['post_title'];
         $ret_msg['postct'][$i]['post_content'] = $rows_post[$i]['post_content'];
         $ret_msg['postct'][$i]['post_tag'] = explode("@",$rows_post[$i]['post_tag']);
-        $ret_msg['postct'][$i]['ext_tag'] = $rows_post[$i]['ext_tag'];
+        $ret_msg['postct'][$i]['ext_tag'] = explode("@",$rows_post[$i]['ext_tag']);
         $ret_msg['postct'][$i]['post_time'] = substr($rows_post[$i]['post_time'],0,19);
     }
 

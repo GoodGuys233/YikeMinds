@@ -128,12 +128,12 @@
             <div class="tt-topic-alert tt-alert-default" role="alert">
               欢迎来到益科论坛。提问前请阅读<a href="#" target="_blank">《益科论坛规则》</a>
             </div>
-
-
+			
 			<div id="post-list">
             <!-- 单个置顶帖子开始 -->
-            <div class="tt-item tt-itemselect">
-				<div class="tt-item tt-itemselect" v-if="item.ext_tag=='top'" v-for="(item,idx) in vposts">
+			<div class="top-posts" v-for="(item,idx) in vposts">
+            <div class="tt-item tt-itemselect"  v-if="item.ext_tag.indexOf('set_top')!=-1">
+				<div class="tt-item tt-itemselect">
 					<div class="tt-col-avatar" id="post_avatar">
 						<svg class="tt-icon">
 						<use :xlink:href="`#icon-ava-${String.fromCharCode(97+Math.random()*10)}`"></use>
@@ -150,8 +150,8 @@
 						<div class="row align-items-center no-gutters">
 							<!-- 主题标签 -->
 							<div class="col-11" id="tags">
-								<ul class="tt-list-badge">
-									<li  v-for="(tag,tagi) in item.post_tag" class="show-mobile"><a href="#"><span :class="`tt-color0${idx%5+tagi+1} tt-badge`">{{tag}}</span></a></li>
+								<ul class="tt-list-badge" v-if="item.post_tag.length >= 1 && item.post_tag[0].length>0">
+									<li  v-for="(tag,tagi) in item.post_tag" class="show-mobile" ><a href="#"><span :class="`tt-color0${idx%5+tagi+1} tt-badge`">{{tag}}</span></a></li>
 								</ul>
 							</div>
 						<div class="topic-time" style="float: left; padding-top: 10px;">{{item.post_time}}</div>
@@ -159,12 +159,13 @@
 					</div>
 				</div>
             </div>
+			</div>
             <!-- 单个置顶帖子结束 -->
             
 			
 			<!-- 单个普通帖子开始 -->
-			
-				<div class="tt-item" v-for="(item,idx) in vposts">
+				<div id="normal-posts"  v-for="(item,idx) in vposts">
+				<div class="tt-item" v-if="item.ext_tag.indexOf('set_top')==-1">
 					<div id="pid_aera" style="display: none;">{{item.pid}}</div>
 					<div class="tt-col-avatar" id="post_avatar">
 						<svg class="tt-icon">
@@ -178,7 +179,7 @@
 						<div class="row align-items-center no-gutters">
 							<!-- 主题标签 -->
 							<div class="col-11" id="tags">
-								<ul class="tt-list-badge">
+								<ul class="tt-list-badge" v-if="item.post_tag.length >= 1 && item.post_tag[0].length>0">
 									<li  v-for="(tag,tagi) in item.post_tag" class="show-mobile"><a href="#"><span :class="`tt-color0${idx%5+tagi+1} tt-badge`">{{tag}}</span></a></li>
 								</ul>
 							</div>
@@ -186,6 +187,7 @@
 						</div>
 					</div>
 				</div>
+			</div>
 			</div>
 			<!-- 单个普通帖子结束 -->
 			
@@ -387,7 +389,7 @@
                         </i>
 						
 						<!-- 搜索表单开始 -->
-						<input type="text" name="name" class="form-control pt-customInputSearch" id="searchForum" placeholder="搜索主题">
+						<input type="text" name="name" class="form-control pt-customInputSearch" id="searchForum" placeholder="搜索关键字">
 					</div>
 					<div class="form-group">
 						<label for="searchCategory">分类</label>
@@ -411,7 +413,7 @@
 
 					<!-- 搜索表单结束 -->
 					<div class="form-group">
-						<a href="#" class="btn btn-secondary btn-block">Search</a>
+						<a href="#" class="btn btn-secondary btn-block" onclick="search_post();">搜索</a>
 					</div>
 				</form>
 			</div>

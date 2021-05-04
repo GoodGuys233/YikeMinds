@@ -20,7 +20,7 @@ $all_count = $row['COUNT(*)'];
 <!DOCTYPE html>
 <html>
     <head>
-        <title>维修登记</title>
+        <title>益科主页</title>
         <link rel="shortcut icon" href="./img/yike.png">
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -66,7 +66,7 @@ $all_count = $row['COUNT(*)'];
                     <div class="sign_inner signup_inner"> 
                         <div class="text-center">
                         <img src="./img/yike.png" height=55px>
-                        <h3>益科服务队登记表单</h3> 
+                        <h3>益科一站式维修管理平台</h3> 
                         <div class='banner_num_view' style="padding-top:20px;font-size:14px;color:grey;" >
                         正在排队<span id='pending_num'></span>项
                         &nbsp;&nbsp;&nbsp;&nbsp;

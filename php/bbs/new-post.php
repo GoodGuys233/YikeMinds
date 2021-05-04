@@ -23,13 +23,14 @@ else {
     $post_content = $_POST['content'];
     $email = $_SESSION['mail'];
     $post_tag = $_POST['tag'];
+    $ext_tag = $_POST['ext_tag'];
     $post_time = date("Y-m-d H:i:s");
 }
 
 try{
     $db->beginTransaction();
-    $stmt = $db->prepare("INSERT INTO bbs_post(user_email,user_name,post_title,post_content,post_time,post_tag) VALUES (?,?,?,?,?,?)");
-    $stmt->execute(array($email,$post_user,$post_title,$post_content,$post_time,$post_tag));
+    $stmt = $db->prepare("INSERT INTO bbs_post(user_email,user_name,post_title,post_content,post_time,post_tag,ext_tag) VALUES (?,?,?,?,?,?,?)");
+    $stmt->execute(array($email,$post_user,$post_title,$post_content,$post_time,$post_tag,$ext_tag));
     
     $ret_msg['err_code'] = '0';
     $ret_msg['err_msg'] = '发布成功！';
