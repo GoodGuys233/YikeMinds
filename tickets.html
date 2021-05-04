@@ -16,6 +16,7 @@
     <link rel="shortcut icon" href="./img/yike.png">
     <script language=javascript src='https://cdn.bootcdn.net/ajax/libs/sweetalert/2.1.2/sweetalert.min.js'></script>
     <script src="./jsapi.js"></script>
+    <script src="https://cdn.staticfile.org/vue-resource/1.5.1/vue-resource.min.js"></script>
     <title>我的工单</title>
 </head>
 
@@ -39,9 +40,7 @@
                 <h1>我的工单</h1>
                 <p><span>山东科技大学益科服务队竭诚为您服务。</span><br>这里的每一笔工单，是为您提供的便利，也是我们提升自己的实践契机。</p>
             </div>
-            <div class="changelog_inner">
-                
-                
+            <div class="changelog_inner" id="user_tickets">
                 <!-- 单个工单开始 -->
                 <div class="row changelog_info" id="v1">
                     <div class="col-lg-3 changelog_date">
@@ -74,6 +73,29 @@
                 <!-- 单个工单结束 -->
             </div>
 
+            <script>
+                var app_user_tickets = new Vue({
+                    el:"#user_tickets",
+                    data:{
+                        vtickets:undefined,
+                    },
+                    mounted:function(){
+						this.$http.post('./php/get_user_tickets.php',{"":""},{emulateJSON:true}).then(function(res){
+							this.post_title = res.body.post_title;
+							this.post_content = res.body.post_content;
+							this.post_user = res.body.user_name;
+							this.post_time = res.body.post_time;
+							this.post_tag = res.body.post_tag;
+							this.post_reply = res.body.reply;
+						},function(res){
+							//console.log(res.status);
+							console.log('请求后台接口成功');
+						});
+
+					}
+                })
+            </script>
+            
             <footer>
                 <div class="border_bottom"></div>
                 <div class="row feedback_link">

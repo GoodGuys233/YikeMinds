@@ -6,7 +6,7 @@ session_start();
 
 $ret_arr = array();
 
-if(empty($_SESSION['user'])){
+if($_SESSION['name'] == ''){
     echo("用户未登录");
 }
 else{
@@ -22,8 +22,28 @@ try{
 
     for($i=0;$i<count($user_all_tickets);$i++){
         $ret_arr[$i]['submit_time'] = $user_all_tickets[$i]['cdate'];
+        $ret_arr[$i]['submit_object'] = $user_all_tickets[$i]['yobject'];
+        $ret_arr[$i]['submit_extra'] = $user_all_tickets[$i]['extra'];
+        $ret_arr[$i]['submit_des'] = $user_all_tickets[$i]['des'];
+        $ret_arr[$i]['submit_ip'] = $user_all_tickets[$i]['ip'];
+        $ret_arr[$i]['submit_id'] = $user_all_tickets[$i]['id'];
+        $ret_arr[$i]['submit_deleted'] = $user_all_tickets[$i]['deleted'];
+
+        $stmt = $db->prepare(("SELECT * FROM tobedo WHERE wid=?"));
+        $stmt->execute(array($ret_arr[$i]['submit_id']));
+        $tickt_todos = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $ret_arr[$i]['todos'] = $tickt_todos;
     }
 
+    $db->commit();
+    echo(json_encode($ret_arr));
+
 }
+catch(PDOException $pdoerr)
+{
+    $db->rollBack();
+
+}
+
 
 ?>
