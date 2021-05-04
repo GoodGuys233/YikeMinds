@@ -60,7 +60,7 @@
                 </svg>
             </div>
         </div>
-        <div class="mm-backbtn">Back</div>
+        <div class="mm-backbtn">返回</div>
     </div>
 </nav>
 <header id="tt-header">
@@ -121,7 +121,8 @@
             </div>
             <div class="col-auto ml-auto">
                 <div class="tt-account-btn">
-                    <a href="../index.php" class="btn btn-primary">返回主页→</a>
+                    <a href="./page-create-topic.html
+					" class="btn btn-primary">提问</a>
 
                 </div>
             </div>
@@ -132,12 +133,7 @@
     <div class="container">
         <div class="tt-topic-list">
             <div class="tt-list-header">
-                <div class="tt-col-topic">Topic</div>
-                <div class="tt-col-category">Category</div>
-                <div class="tt-col-value hide-mobile">Likes</div>
-                <div class="tt-col-value hide-mobile">Replies</div>
-                <div class="tt-col-value hide-mobile">Views</div>
-                <div class="tt-col-value">Activity</div>
+                <div class="tt-col-topic">全部主题</div>
             </div>
             <div class="tt-topic-alert tt-alert-default" role="alert">
               欢迎来到益科论坛。提问前请阅读<a href="#" target="_blank">《益科论坛规则》</a>
@@ -385,7 +381,7 @@
 							<use xlink:href="#icon-advanced_search"></use>
 						</svg>
 					</i>
-					Advanced Search
+					帖子搜索
 					<a class="pt-close-modal" href="#" data-dismiss="modal">
 						<svg class="icon">
 							<use xlink:href="#icon-cancel"></use>
@@ -399,86 +395,16 @@
                               <use xlink:href="#icon-search"></use>
                             </svg>
                         </i>
-						<input type="text" name="name" class="form-control pt-customInputSearch" id="searchForum" placeholder="Search all forums">
+						
+						<!-- 搜索表单开始 -->
+						<input type="text" name="name" class="form-control pt-customInputSearch" id="searchForum" placeholder="搜索主题">
 					</div>
 					<div class="form-group">
-						<label for="searchName">Posted by</label>
-						<input type="text" name="name" class="form-control" id="searchName" placeholder="Username">
-					</div>
+						<label for="searchCategory">分类</label>
+						<input type="text" name="name" class="form-control" id="searchCategory" placeholder="添加分类">
+					
 					<div class="form-group">
-						<label for="searchCategory">In Category</label>
-						<input type="text" name="name" class="form-control" id="searchCategory" placeholder="Add Category">
-					</div>
-					<div class="checkbox-group">
-				        <input type="checkbox" id="searcCheckBox01" name="checkbox">
-				        <label for="searcCheckBox01">
-				            <span class="check"></span>
-				            <span class="box"></span>
-				            <span class="tt-text">Include all tags</span>
-				        </label>
-				    </div>
-					<div class="form-group">
-						<label>Only return topics/posts that...</label>
-						<div class="checkbox-group">
-					        <input type="checkbox" id="searcCheckBox02" name="checkbox">
-					        <label for="searcCheckBox02">
-					            <span class="check"></span>
-					            <span class="box"></span>
-					            <span class="tt-text">I liked</span>
-					        </label>
-					    </div>
-					    <div class="checkbox-group">
-					        <input type="checkbox" id="searcCheckBox03" name="checkbox">
-					        <label for="searcCheckBox03">
-					            <span class="check"></span>
-					            <span class="box"></span>
-					            <span class="tt-text">are in my messages</span>
-					        </label>
-					    </div>
-					    <div class="checkbox-group">
-					        <input type="checkbox" id="searcCheckBox04" name="checkbox">
-					        <label for="searcCheckBox04">
-					            <span class="check"></span>
-					            <span class="box"></span>
-					            <span class="tt-text">I’ve read</span>
-					        </label>
-					    </div>
-					</div>
-					<div class="form-group">
-						<select class="form-control" id="searchTop">
-							<option>any</option>
-							<option>value 01</option>
-							<option>value 02</option>
-							<option>value 03</option>
-						</select>
-					</div>
-					<div class="form-group">
-						<label for="searchaTopics">Where topics</label>
-						<select class="form-control" id="searchaTopics">
-							<option>any</option>
-							<option>value 01</option>
-							<option>value 02</option>
-							<option>value 03</option>
-						</select>
-					</div>
-					<div class="form-group">
-						<label for="searchAdvTime">Posted</label>
-						<div class="row">
-							<div class="col-6">
-								<select class="form-control">
-									<option>any</option>
-									<option>value 01</option>
-									<option>value 02</option>
-									<option>value 03</option>
-								</select>
-							</div>
-							<div class="col-6">
-								<input type="text" name="name" class="form-control" id="searchAdvTime" placeholder="dd-mm-yyyy">
-							</div>
-						</div>
-					</div>
-					<div class="form-group">
-						<label for="minPostCount">Minimum Post Count</label>
+						<label for="minPostCount">最大结果数量</label>
 						<select class="form-control" id="minPostCount">
 							<option>1</option>
 							<option>2</option>
@@ -492,6 +418,8 @@
 							<option selected>10</option>
 						</select>
 					</div>
+
+					<!-- 搜索表单结束 -->
 					<div class="form-group">
 						<a href="#" class="btn btn-secondary btn-block">Search</a>
 					</div>

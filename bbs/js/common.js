@@ -37,3 +37,12 @@ function delete_post(pid){
         }
     });
 }
+
+
+function search(){
+    var title = $("#searchForum").val();
+    var catagory = $("#searchCategory").val();
+    var maxCount = $("#minPostCount").val();
+
+    
+}
