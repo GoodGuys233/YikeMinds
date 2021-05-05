@@ -205,7 +205,7 @@
 						this.$http.post('../php/bbs/get-post.php',{pageNum:1},{emulateJSON:true}).then(function(res){
 							
 							var vposts = res.body['postct'];
-							console.log(vposts);
+							//console.log(vposts);
 							this.vposts = vposts;
 						},function(res){
 							//console.log(res.status);

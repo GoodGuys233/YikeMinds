@@ -1,7 +1,7 @@
 /*---------------------------------------*/
 /*--------   Table of contents   --------*/
 /*
-¸ü¶à¾«Æ·Ä£°åÇë·ÃÎÊ£ºhttp://www.bootstrapmb.com
+ï¿½ï¿½ï¿½à¾«Æ·Ä£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê£ï¿½http://www.bootstrapmb.com
 1. External module
 	1.1 Bootstrap
 	1.2 Magnific Popup
@@ -43,7 +43,7 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  * Forked from Normalize.css, licensed MIT (https://github.com/necolas/normalize.css/blob/master/LICENSE.md)
  */
-@import url(../../node_modules/magnific-popup/dist/magnific-popup.css);
+/* @import url(../../node_modules/magnific-popup/dist/magnific-popup.css); */
 *,
 *::before,
 *::after {
