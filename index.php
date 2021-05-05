@@ -74,7 +74,7 @@ $all_count = $row['COUNT(*)'];
                         </div>
                         </div>
                         <div class="divider">
-                            <span class="or-text">或者</span>
+                            <span class="or-text"></span>
                         </div> 
             <form method="POST" action="./php/submit.php" class="row login_form">
               <div class="col-lg-12 form-group">
