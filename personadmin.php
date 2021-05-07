@@ -67,9 +67,7 @@ if ($_SESSION['type'] == "user") {
               <!--copyright-->
               <div class="container;">
                 <div id="copyright" style="float:margin-bottom;text-align:center;padding-top:60px;font-size:13px;padding-bottom:10px;">
-                  <span>
-                    ©2016-2021<br>山东科技大学益科服务团队<br>
-                  </span>
+
                   团结/高效/务实/创新<br>
                   <a href="https://beian.miit.gov.cn/">鲁 ICP 备 20012845 号</a><br>
                 </div>

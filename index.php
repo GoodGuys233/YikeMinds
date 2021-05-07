@@ -145,11 +145,7 @@ $all_count = $row['COUNT(*)'];
 
 
           <!-- <div class="jumbotron text-center" style="margin-bottom:6px;margin-top:55px;padding-bottom:5px;padding-top: 2px;"> -->
-          <div id="copyright" style="float:margin-bottom;text-align:center;padding-top:30px;font-size:12px">
-          <span>
-          ©2016-2021<br>山东科技大学益科服务团队<br>
-          </span>         
-          </div>
+
           <div id="author" style="float:margin-bottom;text-align:center;padding-top:10px;font-size:10px;color:grey;">
         团结/高效/务实/创新<br>
         <a href="https://beian.miit.gov.cn/">鲁 ICP 备 20012845 号</a><br>

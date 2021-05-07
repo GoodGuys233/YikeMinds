@@ -85,9 +85,7 @@ echo "</div>";
     <div class="logo" style="height:35px;margin-bottom:8px;margin-top:-15px">
     <a href="../door.php"><img src="../../img/yike.png" height=35px></a>
     </div>
-  <span>
-  ©2016-2021<br>山东科技大学益科服务团队<br>
-  </span>
+
 团结/高效/务实/创新<br>
   <a href="https://beian.miit.gov.cn/">鲁 ICP 备 20012845 号</a><br>
   </div>
