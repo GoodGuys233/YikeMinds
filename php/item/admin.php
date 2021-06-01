@@ -93,7 +93,7 @@ while($row=mysqli_fetch_array($res))
     $ares=mysqli_query($con,$asql);
     echo "<div class='card'>";
     echo "<div class='card-header'>";
-    echo "<a class='card-link' id='".$row['id']."' data-toggle='collapse' href='#collapseOne".$row['id']."'><b>#".$row['id']."</b>&nbsp;&nbsp;&nbsp;".$row['yname']."</a></div>";
+    echo "<a style='color:red;' class='card-link' id='".$row['id']."' data-toggle='collapse' href='#collapseOne".$row['id']."'><b>#".$row['id']."</b>&nbsp;&nbsp;&nbsp;".$row['yname']."</a></div>";
     echo "<div id='collapseOne".$row['id']."' class='collapse' style='padding:10px;' data-parent='#accordion' >";
     echo "<table class='table table-striped'><tbody>";
     echo " <tr> <td  class='card-text'> <b style='width:85px;float:left'>工单号：</b>".$row['id']."</td></tr>";
